@@ -1,0 +1,22 @@
+header {
+    text-align: center;
+    color: aliceblue;
+    font-size: 60px;
+}
+
+p {
+    margin-top: 30px;
+    padding:30px;
+    text-align: center;
+    color: aliceblue;
+    font-size: 30px;
+
+
+}
+body {
+    background-color: darkslateblue;
+}
+.button {
+    position: relative;
+    left: 430px;
+}

@@ -16,7 +16,21 @@ p {
 body {
     background-color: darkslateblue;
 }
-.button {
+.start-button {
     position: relative;
     left: 430px;
+}
+
+section{
+    display: none;
+    position: relative;
+    left: 1020px;
+}
+
+#question-container{
+    display: none;
+}
+
+#choices-container{
+    display: none;
 }

@@ -9,11 +9,23 @@
 </head>
 <body>
 <header>Welcome to Code Quiz Challenge</header>
+<section>
+        <div class ="count">0</div>
+</section>
+<div id = questions-container></div>
+<div id = choices-container>
+    <button type="button" id="button1" class="btn btn-secondary">Secondary</button>
+    <button type="button" id="button2" class="btn btn-secondary">Secondary</button>
+    <button type="button" id="button3" class="btn btn-secondary">Secondary</button>
+</div>
+
     <main>
         <p>
-            This is a Javascript quiz, you will be given 60seconds to answer 5 Javascript related questions. At the end of the quiz, you may log your initials with your score and view the scoreboard.
+            This is a Javascript quiz, you will be given 80seconds to answer 5 Javascript related questions.
+            Each time you get a wrong answer you will lose 15seconds to complete the quiz. 
+            At the end of the quiz, you may log your initials with your score and view the scoreboard.
         </p>
-            <div class="button">
+            <div class="start-button">
                 <button type="button" class="btn btn-info" >Start The Quiz</button>
             </div>
     </main>

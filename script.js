@@ -6,6 +6,7 @@
 const SCORE_BOARD_KEY = "scoreBoard";
 var score = 0;
 var timer = 0;
+var timerInterval;
 var currentQuestionnaireIndex = 0;
 
 var choiceOneEl = document.querySelector("#button1");
@@ -85,11 +86,15 @@ var questionnaires = [
 //attach this to the click handler for the start button
 function startQuiz() {
     timer = 80;
+
     function myTimer() {
         timer--;
         timerEl.textContent = timer;
+        if (timer <= 0) {
+            endGame();
+        }
     }
-    setInterval(myTimer, 1000);
+    timerInterval = setInterval(myTimer, 1000);
     displayQuestionnaire();
 }
 
@@ -106,7 +111,7 @@ function displayQuestionnaire() {
         choicesBox.appendChild(buttonEl);
         buttonEl.addEventListener("click", function () {
             var correct = this.value;
-            if (correct) {
+            if (correct === "true") {
                 rightOrWrongEl.innerText = "That's correct!";
                 score++;
             } else {
@@ -124,6 +129,7 @@ function displayQuestionnaire() {
 }
 
 function endGame() {
+    clearInterval(timerInterval);
     questionBox.style.display = "none";
     choicesBox.style.display = "none";
     submitScore.style.display = "block";
@@ -135,7 +141,7 @@ function endGame() {
         var scoreBoardEntry = { userName: nameInput.value, score: score};
         var scoreBoardEntries = localStorage.getItem(SCORE_BOARD_KEY);
         if (scoreBoardEntries) {
-            scoreBoardEntries = JSON.parse(scoreBoardEntry);
+            scoreBoardEntries = JSON.parse(scoreBoardEntries);
         } else {
             scoreBoardEntries = [];
         }

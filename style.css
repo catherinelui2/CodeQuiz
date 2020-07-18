@@ -21,16 +21,15 @@ body {
     left: 430px;
 }
 
+
 section{
-    display: none;
     position: relative;
     left: 1020px;
 }
 
-#question-container{
-    display: none;
-}
 
-#choices-container{
-    display: none;
+#timer {
+    color: white;
+    font-size: 30px;
+    z-index: 100;
 }

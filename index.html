@@ -10,15 +10,17 @@
 <body>
 <header>Welcome to Code Quiz Challenge</header>
 <section>
-        <div class ="count">0</div>
+        <div id="timer"></div>
 </section>
-<div id = questions-container></div>
-<div id = choices-container>
-    <button type="button" id="button1" class="btn btn-secondary">Secondary</button>
-    <button type="button" id="button2" class="btn btn-secondary">Secondary</button>
-    <button type="button" id="button3" class="btn btn-secondary">Secondary</button>
-</div>
+<div id="questions-container"></div>
+<div id="choices-container"></div>
+<div id="right-or-wrong"></div>
 
+<div id ="submitScore">
+    <p id ="score"></p>
+    <label for= "playerName">Enter Your Name Here</label><input id="playerName" type ="text">  
+    <button id="scoreButton" type="button" class="btn btn-info" >Submit To Scoreboard</button>
+</div>
     <main>
         <p>
             This is a Javascript quiz, you will be given 80seconds to answer 5 Javascript related questions.

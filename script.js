@@ -129,6 +129,7 @@ function displayQuestionnaire() {
 
 function endGame() {
     clearInterval(timerInterval);
+    timerEl.style.display = "none";
     questionBox.style.display = "none";
     choicesBox.style.display = "none";
     rightOrWrongEl.style.display = "none";

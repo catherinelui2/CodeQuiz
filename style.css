@@ -10,6 +10,9 @@ header {
     font-size: 35px;
 }
 
+.card-body {
+    background-color: slateblue;
+}
 
 p {
     background-color: slateblue;
@@ -26,13 +29,12 @@ body {
 }
 .start-button {
     position: absolute;
-    left: 50%;
+    left: 45%;
 }
 
 
 section{
     position: relative;
-    left: 1020px;
 }
 
 main {
@@ -40,8 +42,12 @@ main {
 }
 
 #timer {
+    position: absolute;
+    right: 20px;
+    top: 10px;
     color: white;
     font-size: 30px;
+
 }
 
 #score {
@@ -56,24 +62,27 @@ main {
 }
 
 #questions-container {
-    position:relative;
+    position: absolute;
     color: white;
     font-size: 30px;
-    left: 35%;
+    top:20%;
+    left: 20%;
 }
 
 #choices-container {
     position: absolute;
-    left: 35%;
+    top: 30%;
+    left: 20%;
     font-size: 30px;
 }
 
 #right-or-wrong {
     position: absolute;
-    left: 35%;
-    bottom:20px;
+    left: 20%;
+    top:50%;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
+    opacity: .5;
 }
 
 #playerNameInputLabel {

@@ -4,7 +4,15 @@ header {
     font-size: 60px;
 }
 
+.card-header {
+    background-color: slateblue;
+    color: white;
+    font-size: 35px;
+}
+
+
 p {
+    background-color: slateblue;
     margin-top: 30px;
     padding:30px;
     text-align: center;
@@ -66,7 +74,6 @@ main {
     bottom:20px;
     color: white;
     font-size: 30px;
-
 }
 
 #playerNameInputLabel {

@@ -1,5 +1,4 @@
-// -if all the questions have been answered or the timer is 0
-//     - then game is over
+
 // -get score, enter initials, save to LS
 
 //variables
@@ -132,9 +131,11 @@ function endGame() {
     clearInterval(timerInterval);
     questionBox.style.display = "none";
     choicesBox.style.display = "none";
+    rightOrWrongEl.style.display = "none";
     submitScore.style.display = "block";
     var scoreEl = submitScore.querySelector("#score");
     scoreEl.innerText = "Your Score is: " + score;
+    var highestScore = submitScore.querySelector("#highestScore");
     var scoreButton = submitScore.querySelector("#scoreButton");
     var nameInput = submitScore.querySelector("#playerName");
     scoreButton.addEventListener("click", function () {
@@ -149,8 +150,20 @@ function endGame() {
         scoreBoardEntries.sort((e1, e2) => e2.score - e1.score);
 
         localStorage.setItem(SCORE_BOARD_KEY, JSON.stringify(scoreBoardEntries));
+        for (var highScoreEntry of scoreBoardEntries){
+            var pTag  = document.createElement("p");
+            pTag.innerText = "Player Entry: " + highScoreEntry.userName + " score: " + highScoreEntry.score;
+            highestScore.appendChild(pTag);
+        }
+        
     });
 }
+
+var clearHighscoreBtn = submitScore.querySelector("#clearHighscoreBtn");
+clearHighscoreBtn.addEventListener("click", function(){
+    localStorage.removeItem(SCORE_BOARD_KEY);
+    highestScore.innerHTML = "";
+})
 
 // when user clicks start quiz button, clear out existing text in the main and header tag.
 startButton.addEventListener("click", function () {
@@ -158,3 +171,4 @@ startButton.addEventListener("click", function () {
     header.style.display = "none";
     startQuiz();
 });
+

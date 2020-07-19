@@ -17,8 +17,8 @@ body {
     background-color: darkslateblue;
 }
 .start-button {
-    position: relative;
-    left: 430px;
+    position: absolute;
+    left: 50%;
 }
 
 
@@ -27,9 +27,44 @@ section{
     left: 1020px;
 }
 
+main {
+    position: relative;
+}
 
 #timer {
     color: white;
     font-size: 30px;
-    z-index: 100;
+}
+
+#score {
+    color: white;
+    font-size: 30px;
+}
+
+#submitScore {
+    display: none;
+    position: absolute;
+    left: 35%;
+}
+
+#questions-container {
+    position:relative;
+    color: white;
+    font-size: 30px;
+    left: 35%;
+}
+
+#choices-container {
+    position: absolute;
+    left: 35%;
+    font-size: 30px;
+}
+
+#right-or-wrong {
+    position: absolute;
+    left: 35%;
+    bottom:20px;
+    color: white;
+    font-size: 30px;
+
 }

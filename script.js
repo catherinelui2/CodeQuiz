@@ -29,11 +29,11 @@ var questionnaires = [
         answers: [
             {
                 text: "A special variable, which can hold more than one value at a time",
-                correct: true,
+                correct: true
             },
             {
                 text: "A special character, which can hold one value",
-                correct: false,
+                correct: false
             },
             { text: "A symbol", correct: false },
         ],
@@ -41,36 +41,30 @@ var questionnaires = [
     {
         question: "What is a syntax?",
         answers: [
-            {
-                text: "A defines two types of values: Fixed values and variable values",
-                correct: true,
-            },
-            { text: "A value", correct: false },
             { text: "A number type that define values", correct: false },
+            { text: "A value", correct: false },
+            { text: "A defines two types of values: Fixed values and variable values", correct: true },
         ],
     },
     {
         question: "What are variables?",
         answers: [
-            { text: "Containers for storing data values", correct: true },
             { text: "Containers for storing html values", correct: false },
+            { text: "Containers for storing data values", correct: true },
             { text: "Containers for storing css values", correct: false },
         ],
     },
     {
         question: "What are strings?",
         answers: [
+            { text: "Are used for storing and manipulating numbers", correct: false },
             {
                 text: "Are used for storing and manipulating text",
-                correct: true,
-            },
-            {
-                text: "Are used for storing and manipulating numbers",
-                correct: false,
+                correct: true
             },
             {
                 text: "Are used for storing and manipulating integers",
-                correct: false,
+                correct: false
             },
         ],
     },
@@ -98,7 +92,7 @@ function displayQuestionnaire() {
     var answers = questionnaire.answers;
     choicesBox.innerHTML = "";
     for (var answer of answers) {
-        var br =document.createElement("br");
+        var br = document.createElement("br");
         var buttonEl = document.createElement("button");
         buttonEl.classList.add("btn", "btn-secondary");
         buttonEl.innerText = answer.text;

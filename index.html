@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>Welcome to Code Quiz Challenge</header>
-<section>
-        <div id="timer"></div>
-</section>
-<div id="questions-container"></div>
-<div id="choices-container"></div>
-<div id="right-or-wrong"></div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Code Quiz</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>Welcome to Code Quiz Challenge</header>
 
-
-<div id ="submitScore">
-    <p id ="score"></p>
-    <div id ="highestScore"></div>
-    <label for= "playerName" id="playerNameInputLabel">Enter Your Name Here</label><br><input id="playerName" type ="text">  
-    <button id="scoreButton" type="button" class="btn btn-info" >Submit To Scoreboard</button>
-    <button id="clearHighscoreBtn" type="button" class="btn btn-info" >Clear All Scores</button>
-</div>
-    <main>
-        <p>
-            This is a Javascript quiz, you will be given 80seconds to answer 5 Javascript related questions.
-            Each time you get a wrong answer you will lose 15seconds to complete the quiz. 
-            At the end of the quiz, you may log your initials with your score and view the scoreboard.
-        </p>
+        <main>
+            <p>
+                This is a Javascript quiz, you will be given 80seconds to answer 5 Javascript related questions. Each
+                time you get a wrong answer you will lose 15seconds to complete the quiz. At the end of the quiz, you
+                may log your initials with your score and view the scoreboard.
+            </p>
             <div class="start-button">
-                <button type="button" class="btn btn-info" >Start The Quiz</button>
+                <button type="button" class="btn btn-info">Start The Quiz</button>
             </div>
-    </main>
+        </main>
 
-<script src=script.js></script>
-</body>
+        <section>
+            <div id="timer"></div>
+        </section>
+        <div id="questions-container"></div>
+        <div id="choices-container"></div>
+        <div id="right-or-wrong"></div>
+
+        <div id="submitScore">
+            <p id="score"></p>
+            <div id="highestScore"></div>
+            <label for="playerName" id="playerNameInputLabel">Enter Your Name Here</label><br /><input
+                id="playerName"
+                type="text"
+            /><br /><br />
+            <button id="scoreButton" type="button" class="btn btn-info">Submit To Scoreboard</button>
+            <button id="clearHighscoreBtn" type="button" class="btn btn-info">Clear All Scores</button>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
 </html>

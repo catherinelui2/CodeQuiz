@@ -1,4 +1,3 @@
-
 // -get score, enter initials, save to LS
 
 //variables
@@ -7,10 +6,6 @@ var score = 0;
 var timer = 0;
 var timerInterval;
 var currentQuestionnaireIndex = 0;
-
-var choiceOneEl = document.querySelector("#button1");
-var choiceTwoEl = document.querySelector("#button2");
-var choiceThreeEl = document.querySelector("#button3");
 var submitScore = document.querySelector("#submitScore");
 var rightOrWrongEl = document.querySelector("#right-or-wrong");
 var timerEl = document.querySelector("#timer");
@@ -55,7 +50,7 @@ var questionnaires = [
         ],
     },
     {
-        question: "what are variables?",
+        question: "What are variables?",
         answers: [
             { text: "Containers for storing data values", correct: true },
             { text: "Containers for storing html values", correct: false },
@@ -103,6 +98,7 @@ function displayQuestionnaire() {
     var answers = questionnaire.answers;
     choicesBox.innerHTML = "";
     for (var answer of answers) {
+        var br =document.createElement("br");
         var buttonEl = document.createElement("button");
         buttonEl.classList.add("btn", "btn-secondary");
         buttonEl.innerText = answer.text;
@@ -111,10 +107,10 @@ function displayQuestionnaire() {
         buttonEl.addEventListener("click", function () {
             var correct = this.value;
             if (correct === "true") {
-                rightOrWrongEl.innerText = "That's correct!";
+                rightOrWrongEl.innerText = "That's correct 😻";
                 score++;
             } else {
-                rightOrWrongEl.innerText = "That's WRONG!";
+                rightOrWrongEl.innerText = "WRONG!";
                 timer -= 5;
             }
             currentQuestionnaireIndex++;
@@ -140,7 +136,7 @@ function endGame() {
     var scoreButton = submitScore.querySelector("#scoreButton");
     var nameInput = submitScore.querySelector("#playerName");
     scoreButton.addEventListener("click", function () {
-        var scoreBoardEntry = { userName: nameInput.value, score: score};
+        var scoreBoardEntry = { userName: nameInput.value, score: score };
         var scoreBoardEntries = localStorage.getItem(SCORE_BOARD_KEY);
         if (scoreBoardEntries) {
             scoreBoardEntries = JSON.parse(scoreBoardEntries);
@@ -151,20 +147,19 @@ function endGame() {
         scoreBoardEntries.sort((e1, e2) => e2.score - e1.score);
 
         localStorage.setItem(SCORE_BOARD_KEY, JSON.stringify(scoreBoardEntries));
-        for (var highScoreEntry of scoreBoardEntries){
-            var pTag  = document.createElement("p");
+        for (var highScoreEntry of scoreBoardEntries) {
+            var pTag = document.createElement("p");
             pTag.innerText = "Player Entry: " + highScoreEntry.userName + " score: " + highScoreEntry.score;
             highestScore.appendChild(pTag);
         }
-        
     });
 }
 
 var clearHighscoreBtn = submitScore.querySelector("#clearHighscoreBtn");
-clearHighscoreBtn.addEventListener("click", function(){
+clearHighscoreBtn.addEventListener("click", function () {
     localStorage.removeItem(SCORE_BOARD_KEY);
     highestScore.innerHTML = "";
-})
+});
 
 // when user clicks start quiz button, clear out existing text in the main and header tag.
 startButton.addEventListener("click", function () {
@@ -172,4 +167,3 @@ startButton.addEventListener("click", function () {
     header.style.display = "none";
     startQuiz();
 });
-

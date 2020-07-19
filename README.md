@@ -1,7 +1,7 @@
 # CodeQuiz
 Homework 03 
 
-Pseudo Code
+Pseudo Code - CodeQuiz 
 
 - start button when clicked starts quiz
     -timer starts
